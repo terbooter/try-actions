@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  node:
+    build: .
+    container_name: "test-actions"
+#    env_file: .env
+    networks:
+      - internal
+#    ports:
+#      - "5003:5003"
+    restart: "no"
+
+networks:
+  internal:
