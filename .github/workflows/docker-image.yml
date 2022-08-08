@@ -35,4 +35,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push to Github Registry
-      run: docker push ghcr.io/"$IMAGE_NAME:$IMAGE_TAG"
+      run: docker push "ghcr.io/$IMAGE_NAME:$IMAGE_TAG"
