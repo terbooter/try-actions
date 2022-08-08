@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  test-env-echo:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -36,3 +36,20 @@ jobs:
           echo test, and deploy your project.
           echo "$CI"
           echo "$GITHUB_ACTION"
+          echo "$GITHUB_ACTION_PATH"
+          echo "$GITHUB_ACTION_REPOSITORY"
+          echo "$GITHUB_ACTION_REPOSITORY"
+          echo "$GITHUB_ACTOR"
+          echo "$GITHUB_API_URL"
+          echo "$GITHUB_BASE_REF"
+          echo "$GITHUB_ENV"
+          echo "$GITHUB_EVENT_NAME"
+          echo "$GITHUB_EVENT_PATH"
+          echo "$GITHUB_JOB"
+          echo "$GITHUB_JOB"
+          echo "$GITHUB_PATH"
+          echo "$GITHUB_WORKFLOW"
+          echo "$RUNNER_ARCH"
+          echo "$RUNNER_NAME"
+          echo "$RUNNER_OS"
+          echo "$RUNNER_TEMP"
