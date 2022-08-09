@@ -19,10 +19,9 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  env:
-    TEST_2: www222
-
   one:
+    env:
+      TEST_2: www222
     runs-on: ubuntu-latest
     steps:
       - name: Dump Env context
