@@ -56,5 +56,6 @@ jobs:
 
       - name: Dump GitHub context
         env:
+          TEST_STEP_LEVEL_VAR: www222
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
