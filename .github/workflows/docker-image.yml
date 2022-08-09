@@ -9,8 +9,8 @@ on:
 env:
   DOCKER_REPOSITORY: ghcr.io
   IMAGE_TAG: ${{ github.run_number }}
-#  IMAGE_NAME: ${{ github.repository }}
-  IMAGE_NAME: terbooter/try-actions
+  IMAGE_NAME: ${{ github.repository }}
+#  IMAGE_NAME: terbooter/try-actions
 
 jobs:
 
@@ -20,6 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Print Info
+      run: echo "$IMAGE_NAME"
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag "$DOCKER_REPOSITORY/$IMAGE_NAME:$IMAGE_TAG"
