@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main2" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main2" ]
 
 env:
   DOCKER_REPOSITORY: ghcr.io
@@ -16,6 +16,9 @@ env:
 jobs:
 
   build:
+
+    env:
+      TEST_VAR: ${{ env }}
 
     runs-on: ubuntu-latest
 
@@ -29,7 +32,7 @@ jobs:
 
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag "$DOCKER_REPOSITORY/$IMAGE_NAME:$IMAGE_TAG"
+      run: docker build . --file Dockerfile --tag "$FULL_IMAGE_NAME"
 
     - name: List docker images
       run: docker image ls
@@ -42,4 +45,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push to Github Registry
-      run: docker push "$DOCKER_REPOSITORY/$IMAGE_NAME:$IMAGE_TAG"
+      run: docker push "$FULL_IMAGE_NAME"

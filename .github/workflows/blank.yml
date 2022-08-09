@@ -6,7 +6,7 @@ name: Custom Workflow name
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main2" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main2" ]
 
@@ -53,3 +53,6 @@ jobs:
           echo "$RUNNER_NAME"
           echo "$RUNNER_OS"
           echo "$RUNNER_TEMP"
+
+      - name: Echo Github Context
+        run: echo "$GITHUB_CONTEXT"
