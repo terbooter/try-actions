@@ -54,5 +54,7 @@ jobs:
           echo "$RUNNER_OS"
           echo "$RUNNER_TEMP"
 
-      - name: Echo Github Context
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
