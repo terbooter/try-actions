@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  TEST_1: www111
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
@@ -21,8 +24,8 @@ jobs:
     steps:
       - name: Dump Env context
         env:
-          GITHUB_CONTEXT: ${{ toJson(env) }}
-        run: echo "$GITHUB_CONTEXT"
+          ENV_CONTEXT: ${{ toJson(env) }}
+        run: echo "$ENV_CONTEXT"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
